@@ -1,0 +1,43 @@
+/*
+/* 
+    Created on : 11/03/2015, 00:42:20
+    Author     : wesley
+*/
+#conteiner
+{
+    border: 1px solid cornflowerblue;
+    border-radius: 10px;
+    
+}
+#cabecalho
+{
+     background-color: blue;
+     height: 200px;
+     border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+#barraMenu
+{
+    background-color: brown;
+    margin: 0px;
+    margin-top: 150px;
+    height: 30px;
+}
+#conteudo
+{
+    background-color:white;
+    margin: 0px;
+    min-height: 800px;
+}
+#menuLateral
+{
+    background-color: silver;
+    min-height: 800px;
+}
+#rodape
+{
+    background-color: blue;
+    height: 80px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
