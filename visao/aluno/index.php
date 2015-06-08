@@ -1,47 +1,32 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+  Autor:Wesley da silva Pereira
+  Data:08/06/2015
 -->
+
+
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Virtual-e</title>
-        <link rel="stylesheet"  href="../../css/960_12_col.css" type="text/css">
-        <link rel="stylesheet"  href="../../css/principal.css" type="text/css">
-        <script type="text/javascript" src="aluno.js"> </script>
+        <title></title>
     </head>
-    <body  onload="lista_alunos();">
-        <div id="conteiner" class="container_12"><!--div com todo o conteudo-->
-            <div id="cabecalho" class="grid_12"><!--div cabeçalho -->
-               cabeçalho
-               <div id="barraMenu" class="grid_12"><!--menu barra-->
-                   
-                   <form action="#"   >     
-                       <input type="button" value="Cadastrar Aluno"    style="margin-top: 5px;"/>
-                   </form>
-                </div> <!--final Menu barra-->  
-                
-                
-                
-            </div><!-- final cabeçalho -->
-            <div id="menuLateral" class="grid_2"><!--menu lateral -->
-                    menu lateral
-                    
-                </div><!--final menu lateral -->
-                <div id="conteudo" class="grid_10"><!--conteudo -->
-                    <div id="lista_alunos">
-                        
-                    </div>   
-                   
-                    
-                </div><!-- final conteudo -->
-            
-            <div id="rodape" class="grid_12"><!--rodape -->
-           rodape
-        </div><!--final rodape -->
-        </div><!--final div conteiner -->
-        
+    <body>
+        <form action="../../controle/AlunoControle.php" method="post">
+           Nome:<input type="text"  name="alu_nome">
+            Data nascimento:<input type="text" name="alu_nasci">
+            RG:<input type="text" name="alu_rg"><br>
+            Cpf:<input type="text" name="alu_cpf">
+            data Cadastro:<input type="text" name="alu_cadas">
+            nome Mae:<input type="text"  name="alu_mae">
+            nome Pai:<input type="text"  name="alu_pae">
+            email:<input type="text" name="alu_email"><br>
+            telefone:<input type="text" name="alu_telefone">
+            telefone2:<input type="text" name="alu_telefone1">
+            <input type="hidden" name="alu_ativo" value="1">
+            endereo<input type="number" name="id_endereco">
+            <input type="hidden" name="acao" value="cadastrar">
+            <input type="submit">
+        </form>
     </body>
 </html>
+ 
