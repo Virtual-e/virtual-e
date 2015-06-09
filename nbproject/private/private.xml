@@ -5,8 +5,8 @@
         <group>
             <file>file:/var/www/html/virtual-e/include/config/ConfigClass.php</file>
             <file>file:/var/www/html/virtual-e/controle/AlunoControle.php</file>
-            <file>file:/var/www/html/virtual-e/.gitignore</file>
             <file>file:/var/www/html/virtual-e/modelo/aluno/AlunoClass.php</file>
+            <file>file:/var/www/html/virtual-e/modelo/endereco/EnderecoClass.php</file>
             <file>file:/var/www/html/virtual-e/visao/aluno/index.php</file>
         </group>
     </open-files>

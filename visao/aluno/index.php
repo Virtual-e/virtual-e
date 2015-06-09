@@ -4,7 +4,7 @@
   Data:08/06/2015
 -->
 
-
+<?php include '../../modelo/endereco/EnderecoClass.php'; ?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -27,6 +27,10 @@
             <input type="hidden" name="acao" value="cadastrar">
             <input type="submit">
         </form>
+        <?php $end= new EnderecoClass();  
+        $end->ListarUF();
+          
+        ?>
     </body>
 </html>
  

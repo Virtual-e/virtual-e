@@ -5,7 +5,9 @@
  * Data:08/06/2015
  * 
  */
-
+include '../../include/config/ConfigClass.php';
+$Con = new Configuracao();
+$Con->conectar();
 
 class EnderecoClass {
     
@@ -13,15 +15,15 @@ class EnderecoClass {
     private  $id_cidade;//chave tb_endereco
     private  $id_uf; //chave tb_uf
     private  $id_rua;//chave tb_rua
-    private $id_bairro;//chave tb_bairro
+    private  $id_bairro;//chave tb_bairro
     //########tabela endereço ##############
      
     //##########tabela uf ###############
     private $uf_nome;
     //###########tabela bairro ###########
-    private $bai_nome;
+    private $bai_nome="alameda das bucetas";
     //###########tabela rua ##############
-    private $rua_nosme;
+    private $rua_nome;
     private $rua_numero;
     //#########tabela cidade############
     private $cid_nome;
@@ -56,8 +58,8 @@ class EnderecoClass {
         return $this->bai_nome;
     }
 
-    function getRua_nosme() {
-        return $this->rua_nosme;
+    function getRua_nome() {
+        return $this->rua_nome;
     }
 
     function getRua_numero() {
@@ -96,8 +98,8 @@ class EnderecoClass {
         $this->bai_nome = $bai_nome;
     }
 
-    function setRua_nosme($rua_nosme) {
-        $this->rua_nosme = $rua_nosme;
+    function setRua_nome($rua_nome) {
+        $this->rua_nome = $rua_nome;
     }
 
     function setRua_numero($rua_numero) {
@@ -107,6 +109,40 @@ class EnderecoClass {
     function setCid_nome($cid_nome) {
         $this->cid_nome = $cid_nome;
     }
-
- 
+    
+    //##tabelas sem chave estrangeira############
+    function CadastrarUf()
+     {   
+         $sql="insert into tb_uf (id_uf,uf_nome) value (null,'$this->uf_nome')";//100% salvando
+         $query=  mysql_query($sql) or die("erro ao gravar "); 
+     }
+     function  CadastrarRua()
+     {
+         $sql="insert into tb_rua (id_rua,rua_nome,rua_numero) values (null,'$this->rua_nome','$this->rua_numero')";
+         $query=  mysql_query($sql) or die("Erro ao gravar");//100%salvando
+     }
+     function CadastraBairro()
+      {
+         $sql="insert into tb_bairro (id_bairro,bai_nome) values (null,'$this->bai_nome')";
+         $query=  mysql_query($sql) or die("Erro ao gravar");//100%salvando
+      }
+    //###############final tabelas de cadastros sem chave #############################
+    //----------------inicio listagem das tabelas sem chave --------------------------//
+    function ListarUF()
+      {
+        $sql="select * from tb_uf";
+        $query=  mysql_query($sql);
+        
+          echo ' <input list="browsers" name="browser">
+                 <datalist id="browsers">';
+        while($linha=  mysql_fetch_array($query))
+                {   
+                      
+                    echo "<option value=".$linha['uf_nome'].">";
+                }
+               echo  "</datalist>";
+      }
+      
+      
+      
 }
