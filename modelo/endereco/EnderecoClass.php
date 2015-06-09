@@ -110,7 +110,7 @@ class EnderecoClass {
         $this->cid_nome = $cid_nome;
     }
     
-    //##tabelas sem chave estrangeira############
+    //## funcoes tabelas sem chave estrangeira Rua,UF e Bairro############
     function CadastrarUf()
      {   
          $sql="insert into tb_uf (id_uf,uf_nome) value (null,'$this->uf_nome')";//100% salvando
@@ -133,16 +133,86 @@ class EnderecoClass {
         $sql="select * from tb_uf";
         $query=  mysql_query($sql);
         
-          echo ' <input list="browsers" name="browser">
-                 <datalist id="browsers">';
+         
         while($linha=  mysql_fetch_array($query))
                 {   
-                      
-                    echo "<option value=".$linha['uf_nome'].">";
+                 /*funcionando 100%
+                  * deixar para quando programar o front end
+                  * usar a tag html5  <input list="browsers" name="browser">
+                  *   <datalist id="browsers">
+                  */     
                 }
-               echo  "</datalist>";
+            
+      }
+      function ListarRUA()
+      {
+        $sql="select * from tb_rua";
+        $query=  mysql_query($sql);
+        
+         
+        while($linha=  mysql_fetch_array($query))
+                {   
+                 /*funcionando 100%
+                  * deixar para quando programar o front end
+                  * usar a tag html5  <input list="browsers" name="browser">
+                  *   <datalist id="browsers">
+                  */     
+                }
+      }       
+       function ListarBairro()
+      {
+        $sql="select * from tb_bairro";
+        $query=  mysql_query($sql);
+        
+         
+        while($linha=  mysql_fetch_array($query))
+                {   
+                 /*funcionando 100%
+                  * deixar para quando programar o front end
+                  * usar a tag html5  <input list="browsers" name="browser">
+                  *   <datalist id="browsers">
+                  */     
+                }
+      }  
+  //###################final listagem tabelas sem chave#############################
+      
+  //#########################metodos deletar #####################################
+      
+      function DeletarRua($id)
+      {
+           $sql="delete  from tb_rua where id_rua='$id'";
+           $query=  mysql_query($sql) or die("Impossivel deletar");
       }
       
+      function DeletarUF($id)
+      {
+           $sql="delete  from tb_uf where id_uf='$id'";
+           $query=  mysql_query($sql) or die("Impossivel deletar");
+      }
       
+      function DeletarBairro($id)
+      {    //função testada 100%
+           $sql="delete  from tb_bairro where id_bairro='$id'";
+           $query=  mysql_query($sql) or die("Impossivel deletar");
+      }
+   //###############################final deletar#################################//
       
+   //###############################inicio update ###############################   
+  function UpdateRua($id)
+      {
+           $sql="update  tb_rua set rua_nome='$this->rua_nome', rua_numero='$this->rua_numero'   where id_rua='$id'";
+           $query=  mysql_query($sql) or die("Impossivel editar");
+      }
+   
+   function UpdateBairro($id)
+      {
+           $sql="update  tb_bairro set bai_nome='$this->bai_nome'    where id_bairro='$id'";
+           $query=  mysql_query($sql) or die("Impossivel editar");
+      }   
+   function UpdateUF($id)
+      {
+           $sql="update  tb_uf set uf_nome='$this->uf_nome'  where id_uf='$id'";
+           $query=  mysql_query($sql) or die("Impossivel editar");
+      }       
+    //#################################fim todas funções crud das tabelas RUA,Bairro e uf ############################  
 }

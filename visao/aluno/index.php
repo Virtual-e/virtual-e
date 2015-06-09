@@ -28,7 +28,9 @@
             <input type="submit">
         </form>
         <?php $end= new EnderecoClass();  
-        $end->ListarUF();
+        $end->DeletarBairro(1);
+        $end->DeletarRua(1);
+        
           
         ?>
     </body>
