@@ -28,7 +28,7 @@
             <input type="submit">
         </form>
         <?php $end= new EnderecoClass();  
-       
+       $end->CadastrarEndereco(2,1);
         
           
         ?>
