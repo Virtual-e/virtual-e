@@ -179,13 +179,13 @@ class EnderecoClass {
   //#########################metodos deletar #####################################
       
       function DeletarRua($id)
-      {
+      {     //função testada 100%
            $sql="delete  from tb_rua where id_rua='$id'";
            $query=  mysql_query($sql) or die("Impossivel deletar");
       }
       
       function DeletarUF($id)
-      {
+      {    //função testada 100%
            $sql="delete  from tb_uf where id_uf='$id'";
            $query=  mysql_query($sql) or die("Impossivel deletar");
       }
