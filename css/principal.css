@@ -1,0 +1,66 @@
+/*
+/* 
+    Created on : 11/03/2015, 00:42:20
+    Author     : wesley
+*/
+
+#conteiner
+{
+    margin-top: 30px;
+    border-radius: 15px;
+    
+    
+}
+#cabecalho
+{
+     background-color: #333;
+     height: 100px;
+     border-top-right-radius: 10px;
+     border-top-left-radius: 10px;
+     color: white;
+     width: 954px;
+}
+
+#conteudo
+{
+    background-color:white;
+    min-height: 500px;
+    margin-left: 0px;
+    float: right;
+   
+}
+
+
+#rodape
+{
+    background-color: #333;
+    height: 80px;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    width: 954px;
+    clear: both;
+    color: white;
+}
+#menu
+{ 
+  padding-top: 0px;  
+  padding-left: 15px;
+  text-decoration: none;
+  border-left:1px;
+  border-color: #333;
+  border:solid ;
+  width:10px;
+  height: inherit;
+  
+}
+#banner
+{
+ margin-top: 10px;
+ margin-left: 15px;
+}
+#user-dados
+{
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+}
