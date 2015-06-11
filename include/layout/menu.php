@@ -10,12 +10,16 @@
         <title></title>
     </head>
     <body>
-        <table id="menu">
-            <th>MENU</th>
-            <tr><td>   
-        <a href="#"  class="btn btn-primary btn-large" >ALUNO</a>
-                </td>
-            </tr>    
-        </table>
+        <hr bgcolor="white" >
+        <div id="menu-horizontal">
+           <div id="menu">
+            <a href="#">ALUNOS</a>&nbsp;
+            <a href="#">PROFESSORES</a>
+           </div>
+        </div>
+        
+       
+       
+      
     </body>
 </html>
