@@ -24,9 +24,10 @@
 #conteudo
 {
     background-color:white;
-    min-height: 500px;
+    min-height: 300px;
     margin-left: 0px;
-    float: right;
+    width: 954px;
+    clear: both;
    
 }
 
@@ -34,7 +35,7 @@
 #rodape
 {
     background-color: #333;
-    height: 80px;
+    height: 50px;
     border-bottom-right-radius: 9px;
     border-bottom-left-radius: 9px;
     width: 954px;
@@ -45,7 +46,10 @@
 {
   background-color:  #333;
   color: white;
- 
+  height: 40px;
+  clear: both;
+  margin-top: 3px;
+  padding-top: 5px;
    width: 954px;
 }
   a:link {color: white;}
@@ -62,9 +66,12 @@ a:active {text-decoration: none;}
 {
     float: right;
     margin-right: 10px;
-    margin-top: 5px;
+    margin-top: 12px;
 }
 #menu
 {
-    padding-bottom: 15px;
+  
+     padding-left: 15px;
+     width: 939px;
+     text-decoration: none;
 }

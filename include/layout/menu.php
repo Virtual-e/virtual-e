@@ -10,9 +10,10 @@
         <title></title>
     </head>
     <body>
-        <hr bgcolor="white" >
         <div id="menu-horizontal">
+            
            <div id="menu">
+                
             <a href="#">ALUNOS</a>&nbsp;
             <a href="#">PROFESSORES</a>
            </div>
