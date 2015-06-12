@@ -139,6 +139,10 @@ class AlunoClass {
                  echo "<td>&nbsp; ".$linha['alu_nome']."&nbsp; </td>";
                  echo "<td>&nbsp; ".$linha['alu_cpf']."&nbsp; </td>";
                  echo "<td>&nbsp; ".$linha['alu_rg']."&nbsp; </td>";
+                 echo "<td>&nbsp; ".$linha['alu_nasci']."&nbsp; </td>";
+                 echo "<td>&nbsp; ".$linha['alu_mae']."&nbsp; </td>";
+                 echo "<td>&nbsp; ".$linha['alu_pae']."&nbsp; </td>";
+                 echo "<td>&nbsp; ".$linha['alu_email']."&nbsp; </td>";
                
                 }
               

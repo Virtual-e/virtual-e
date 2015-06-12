@@ -42,7 +42,7 @@
 //----------------------------funcoes ou acoes----------------------------------------
 
 if($acao == "cadastrar")
-    { 
+    {    sleep(10);
       $Aluno->setAlu_ativo($alu_ativo);
       $Aluno->setAlu_cadas($alu_cadas);
       $Aluno->setAlu_cpf($alu_cpf);
@@ -61,7 +61,10 @@ if($acao == "cadastrar")
           . '<script> window.location="../visao/aluno/index.php";</script>';
           }
     }   
-   
+  if($acao==listar)
+      {
+         echo "<?php include '../../visao/aluno/_visao.php';     ?>";
+      } 
 
    
 

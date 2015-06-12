@@ -13,9 +13,9 @@
         <link rel="stylesheet"  href="../../css/principal.css" type="text/css">
         <link href="../../css/bootstrap.css" rel="stylesheet" />
         <link rel="stylesheet"  href="../../css/960_12_col.css" type="text/css">
-        
+        <script src="adminAjax.js" type="text/javascript"></script>
     </head>
-    <body bgcolor="red">
+    <body bgcolor="red" onload="adm()" >
         <div id="conteiner" class="container_12">
             <div id="cabecalho" class="grid_12">
                 <?php include '../../include/layout/banner.php';    ?>
@@ -24,7 +24,7 @@
                 <?php include '../../include/layout/menu.php'; ?>
             </div>
            <div id="conteudo" class="grid_12">
-               <?php include '../../visao/aluno/_visao.php';     ?>
+            
             </div>
             
             <div id="rodape" class="grid_12">
