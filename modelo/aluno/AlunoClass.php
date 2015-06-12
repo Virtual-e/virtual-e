@@ -135,10 +135,13 @@ class AlunoClass {
              //listar funcionando 100%
           while($linha= mysql_fetch_array($resultado))
                 {
-                 //Aqui por hora vai ficar aguardando a parte de front-end 
+                 echo"<tr>";
+                 echo "<td>&nbsp; ".$linha['alu_nome']."&nbsp; </td>";
+                 echo "<td>&nbsp; ".$linha['alu_cpf']."&nbsp; </td>";
+                 echo "<td>&nbsp; ".$linha['alu_rg']."&nbsp; </td>";
                
                 }
-             
+              
          
    }
    function CadastrarAlunos()

@@ -4,7 +4,8 @@
   Data:08/06/2015
 -->
 
-<?php include '../../modelo/endereco/EnderecoClass.php'; ?>
+
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -14,7 +15,7 @@
         <link rel="stylesheet"  href="../../css/960_12_col.css" type="text/css">
         
     </head>
-    <body>
+    <body bgcolor="red">
         <div id="conteiner" class="container_12">
             <div id="cabecalho" class="grid_12">
                 <?php include '../../include/layout/banner.php';    ?>
@@ -23,11 +24,11 @@
                 <?php include '../../include/layout/menu.php'; ?>
             </div>
            <div id="conteudo" class="grid_12">
-                conteudo
+               <?php include '../../visao/aluno/_visao.php';     ?>
             </div>
             
             <div id="rodape" class="grid_12">
-                rodape
+                <?php include '../../include/layout/rodape.php'; ?>
             </div>
         </div>     
    </body>

@@ -3,7 +3,10 @@
     Created on : 11/03/2015, 00:42:20
     Author     : wesley
 */
-
+body
+{
+    background: #333;
+}
 #conteiner
 {
     margin-top: 10px;
@@ -27,6 +30,7 @@
     min-height: 300px;
     margin-left: 0px;
     width: 954px;
+    margin-top: 30px;
     clear: both;
    
 }
@@ -74,4 +78,8 @@ a:active {text-decoration: none;}
      padding-left: 15px;
      width: 939px;
      text-decoration: none;
+}
+#tabela
+{
+  margin-left:  30px;   
 }
