@@ -12,6 +12,6 @@
     </head>
     <body>
         <h5>Sistema de Gestão Escolar  </h5>
-        <h6 style="text-align: right; padding-top: -20px; margin-right: 15px;">Desenvoldido por Wesley da Silva <?php echo date("Y"); ?></h6>
+        <h6 style="text-align: right; padding-top: -20px; margin-right: 15px;">Programador Wesley da Silva Pereira <?php echo date("Y"); ?></h6>
     </body>
 </html>
