@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link href="../../css/bootstrap.css" rel="stylesheet" />
+     
         <title></title>
     </head>
     <body bgcolor="red">
