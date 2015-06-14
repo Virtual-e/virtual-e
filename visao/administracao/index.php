@@ -15,7 +15,7 @@
         <link rel="stylesheet"  href="../../css/960_12_col.css" type="text/css">
         <script src="adminAjax.js" type="text/javascript"></script>
     </head>
-    <body bgcolor="red" onload="adm()" >
+    <body onload="adm()" >
         <div id="conteiner" class="container_12">
             <div id="cabecalho" class="grid_12">
                 <?php include '../../include/layout/banner.php';    ?>

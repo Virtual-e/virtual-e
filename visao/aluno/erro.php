@@ -10,8 +10,8 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        <?php
-        // put your code here
-        ?>
+        Diretório não pode ser listado...
+        <hr>
+        Analista de sistemas Wesley da Silva Pereira.
     </body>
 </html>

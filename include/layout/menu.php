@@ -6,7 +6,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link href="../../css/bootstrap.css" rel="stylesheet" />
+        
         <script  src="../../visao/administracao/adminAjax.js" type="text/javascript"></script>
         <title></title>
     </head>
