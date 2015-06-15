@@ -11,17 +11,19 @@ body
 {
     margin-top: 10px;
     border-radius: 15px;
-    
+   
+    border-color: #333;
+    width: 960px;
     
 }
 #cabecalho
-{
+{ 
      background-color: #333;
      height: 100px;
      border-top-right-radius: 10px;
      border-top-left-radius: 10px;
      color: white;
-     width: 954px;
+     width: 960px;
      background-image: url("../img/banner.png");
 }
 
@@ -29,12 +31,10 @@ body
 {
     background-color:white;
     min-height: 300px;
-    margin-left: 0px;
-    width: 954px;
-    margin-top: 10px;
+    width: 960px;
     padding-top: -30px;
     clear: both;
-   
+    
 }
 
 
@@ -44,7 +44,7 @@ body
     height: 50px;
     border-bottom-right-radius: 9px;
     border-bottom-left-radius: 9px;
-    width: 954px;
+    width: 960px;
     clear: both;
     color: white;
 }
@@ -54,10 +54,10 @@ body
   color: black;
   height: 35px;
   clear: both;
-  margin-top: 3px;
-  padding-top: 5px;
+   padding-top: 3px;
+  //padding-top: 5px;
+  width: 960px;
   
-   width: 954px;
 }
   a:link {color: white;}
 a:visited {text-decoration: none;}
@@ -79,10 +79,21 @@ a:active {text-decoration: none;}
 {
   
      padding-left: 15px;
-     width: 939px;
-     text-decoration: none;
+    
+     
 }
 #tabela
 {
   margin-left:  30px;   
+}
+#adm
+{
+  margin-right: 0px;
+  height: inherit;
+  
+}
+button
+{
+ 
+    font-weight: 200;
 }

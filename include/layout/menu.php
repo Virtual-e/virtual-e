@@ -15,8 +15,8 @@
             
            <div id="menu">
                 
-               <button style="color: black; font-weight: 200" onclick="Alunos()">ALUNOS</button>&nbsp;
-              <button style="color: black; font-weight: 200; ">PROFESSORES</button>&nbsp;
+               <button  onclick="Alunos()">ALUNOS</button>&nbsp;
+              <button >PROFESSORES</button>&nbsp;
            </div>
         </div>
         

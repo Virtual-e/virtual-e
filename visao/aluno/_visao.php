@@ -14,14 +14,18 @@
     
     <head>
         <meta charset="UTF-8">
-        <link href="../../css/bootstrap.css" rel="stylesheet" />
+         <link  href="../../css/bootstrap.css" rel="stylesheet" />
         <link href="../../css/960_12_col.css" rel="stylesheet" />
+        <link href="../../css/principal.css" rel="stylesheet" />
         <script type="text/javascript" src="../administracao/adminAjax.js"> </script>
         <title></title>
     </head>
     <body>
+        
+              
+              <div id="adm" class="grid_12">
         <br><br>
-            <button style="color: black; font-weight: 200; margin-left: 30px; " >CADASTRAR</button>&nbsp;
+           
          
   
            <table border="1" id="tabela">
@@ -33,7 +37,9 @@
           <?php $Aluno->ListarAlunos(); ?>
              
         </table>
-            
+            </div>
+             
+    
       
     </body>
 </html>
