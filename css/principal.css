@@ -22,6 +22,7 @@ body
      border-top-left-radius: 10px;
      color: white;
      width: 954px;
+     background-image: url("../img/banner.png");
 }
 
 #conteudo
@@ -71,8 +72,8 @@ a:active {text-decoration: none;}
 #user-dados
 {
     float: right;
-    margin-right: 10px;
-    margin-top: 12px;
+    margin-right: 20px;
+    margin-top: 1px;
 }
 #menu
 {

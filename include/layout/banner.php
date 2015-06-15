@@ -11,7 +11,7 @@
     </head>
     <body bgcolor="red">
         <div id="banner">
-            <h1> Virtual-e</h1>
+            <h1> &nbsp;Virtual-e</h1>
             <div id="user-dados">
                 Logado: Wesley da Silva Pereira
             </div>
