@@ -11,7 +11,7 @@
         <title></title>
     </head>
     <body>
-        <h5>Sistema de Gestão Escolar  </h5>
-        <h6 style="text-align: right; padding-top: -20px; margin-right: 15px;">Programador Wesley da Silva Pereira <?php echo date("Y"); ?></h6>
+        <h5>&nbsp;&nbsp;  Sistema de Gestão Escolar  </h5>
+        <h6 style="text-align: right; padding-bottom: 30px; padding-right:15px;">Programador Wesley da Silva Pereira <?php echo date("Y"); ?></h6>
     </body>
 </html>

@@ -2,8 +2,9 @@
  *teste de enviar dados via 
  *post em jsp
  */
-function Cadastrar()
+function Cadastrar(acao)
 {
+var buceta=acao;     
 var xmlhttp;
 xmlhttp=new XMLHttpRequest();
 xmlhttp.onreadystatechange=function()
@@ -19,7 +20,7 @@ document.getElementById("conteudo").innerHTML=xmlhttp.responseText;
 }
 xmlhttp.open("POST","../../controle/AlunoControle.php",true);
 xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-xmlhttp.send("acao=cadastrar&alu_nome=Ford&alu_cpf=13241234&alu_mae=gogogo&id_endereco=1");
+xmlhttp.send("acao="+buceta);
 }
 
 function Alunos()

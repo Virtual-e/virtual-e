@@ -14,9 +14,13 @@
         <div id="menu-horizontal">
             
            <div id="menu">
-                
-               <button  onclick="Alunos()">ALUNOS</button>&nbsp;
-              <button >PROFESSORES</button>&nbsp;
+                 <script>
+               var acao= "<?php echo "cadastrar"; ?>";
+               
+               </script>
+               <button class="btn-warning" onclick="Alunos()">ALUNOS</button>&nbsp;
+               <button class="btn-warning" onclick="Cadastrar(acao)" >PROFESSORES</button>&nbsp;
+              
            </div>
         </div>
         
