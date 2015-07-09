@@ -2,6 +2,9 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/var/www/html/virtual-e/js/jquery-1.11.3.js</file>
+            <file>file:/var/www/html/virtual-e/.gitignore</file>
+        </group>
     </open-files>
 </project-private>
