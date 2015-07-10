@@ -135,18 +135,18 @@ class ClassEndereco
 //RF0001- LISTAR ENDEREÇOS pág.5
     function ListarEnderecos()
      {
-       $sql="SELECT * FROM tb_cidade,tb_cep,tb_estado,tb_bairro,tb_rua,tb_endereco";
+       $sql="select * from tb_endereco inner join tb_estado on (tb_endereco.id_estado=tb_estado.id_estado) inner join tb_cidade  on (tb_estado.id_cidade=tb_cidade.id_cidade)inner join tb_bairro on (tb_cidade.id_bairro=tb_bairro.id_bairro) inner join tb_rua on (tb_bairro.id_rua=tb_rua.id_rua) inner join tb_cep on (tb_bairro.id_cep=tb_cep.id_cep)  ";
        $busca=  mysql_query($sql) or die ("erro na busca");
        //vai ter que entregar em um tabela então adicionar umas tags html
        while ($linha = mysql_fetch_array($busca))
        {
          echo "<tr>";  
-         echo "<td>".$linha['cid_nome']."</td>"; 
+         echo "<td>".  utf8_encode($linha['cid_nome'])."</td>"; 
          echo "<td>".$linha['cep_numero']."</td>";
-         echo "<td>".$linha['bai_nome']."</td>";
+         echo "<td>".  utf8_encode($linha['bai_nome'])."</td>";
          echo "<td>".$linha['rua_nome']."</td>";
        }
      }
   
-    
+//sql inner join  cid_nome, est_nome,cid_nome,rua_nome,bai_nome,cep_numero from tb_endereco inner join tb_estado on (tb_endereco.id_estado=tb_estado.id_estado)inner join tb_cidade on (tb_estado.id_cidade=tb_cidade.id_cidade) inner join tb_bairro on (tb_bairro.id_bairro=tb_cidade.id_bairro)inner join tb_rua on (tb_bairro.id_rua=tb_rua.id_rua)inner join tb_cep on (tb_bairro.id_cep=tb_cep.id_cep)    
 }

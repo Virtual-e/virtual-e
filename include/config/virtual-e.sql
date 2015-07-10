@@ -13,8 +13,7 @@ CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_rua` (
   `rua_nome` VARCHAR(255) NULL,
   PRIMARY KEY (`id_rua`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = armscii8
-COLLATE = armscii8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -25,8 +24,7 @@ CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_cep` (
   `cep_numero` VARCHAR(255) NULL,
   PRIMARY KEY (`id_cep`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = armscii8
-COLLATE = armscii8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -51,8 +49,7 @@ CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_bairro` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = armscii8
-COLLATE = armscii8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -70,8 +67,7 @@ CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_cidade` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = armscii8
-COLLATE = armscii8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -89,8 +85,7 @@ CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_estado` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = armscii8
-COLLATE = armscii8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -99,7 +94,6 @@ COLLATE = armscii8_general_ci;
 CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_endereco` (
   `id_endereco` INT NOT NULL AUTO_INCREMENT,
   `id_estado` INT NULL,
-  `tb_enderecocol` VARCHAR(255) NULL,
   PRIMARY KEY (`id_endereco`),
   INDEX `fk_tb_endereco_1_idx` (`id_estado` ASC),
   CONSTRAINT `fk_tb_endereco_1`
@@ -108,8 +102,7 @@ CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_endereco` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = armscii8
-COLLATE = armscii8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
@@ -137,8 +130,7 @@ CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_aluno` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = armscii8
-COLLATE = armscii8_general_ci;
+DEFAULT CHARACTER SET = utf8;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
