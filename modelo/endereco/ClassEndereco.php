@@ -133,9 +133,9 @@ class ClassEndereco
  */
  
 //RF0001- LISTAR ENDEREÇOS pág.5
-    function ListarEnderecos()
+    function ListarEnderecos($_id_aluno)
      {
-       $sql="select * from tb_endereco inner join tb_estado on (tb_endereco.id_estado=tb_estado.id_estado) inner join tb_cidade  on (tb_estado.id_cidade=tb_cidade.id_cidade)inner join tb_bairro on (tb_cidade.id_bairro=tb_bairro.id_bairro) inner join tb_rua on (tb_bairro.id_rua=tb_rua.id_rua) inner join tb_cep on (tb_bairro.id_cep=tb_cep.id_cep)  ";
+       $sql="select * from tb_aluno inner join tb_endereco on (tb_aluno.id_endereco=tb_endereco.id_endereco) inner join tb_estado on (tb_endereco.id_estado=tb_estado.id_estado) inner join tb_cidade on (tb_estado.id_cidade=tb_cidade.id_cidade) inner join tb_bairro on (tb_cidade.id_bairro=tb_cidade.id_cidade) inner join tb_rua on(tb_bairro.id_rua=tb_rua.id_rua) inner join tb_cep on (tb_bairro.id_cep=tb_cep.id_cep) where tb_aluno.id_aluno='$_id_aluno'";
        $busca=  mysql_query($sql) or die ("erro na busca");
        //vai ter que entregar em um tabela então adicionar umas tags html
        while ($linha = mysql_fetch_array($busca))

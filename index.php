@@ -22,7 +22,7 @@ Unicerp Patrocinio MG
         <table border="1">
             
             <td>Cidade</td><td>Cep</td><td>bairro</td><td>rua</td>
-           <?php $endereco->ListarEnderecos(); ?>
+           <?php $endereco->ListarEnderecos(3); ?>
         </tr>
     </table>
       
