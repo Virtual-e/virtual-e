@@ -16,15 +16,26 @@ Unicerp Patrocinio MG
       <?php include './include/config/ConfigClass.php'; 
        $conn= new Configuracao();
        $conn->conectar();
-       include './modelo/endereco/ClassEndereco.php';
-       $endereco= new ClassEndereco();
-       ?>
-        <table border="1">
-            
-            <td>Cidade</td><td>Cep</td><td>bairro</td><td>rua</td>
-           <?php $endereco->ListarEnderecos(3); ?>
-        </tr>
-    </table>
+      ?>
+        <form action="controle/endereco/ControleEndereco.php" method="post">
+            teste de formulario 
+            id_endereco:<input type="text" name="txtid_endereco"><br>
+            id_estado:<input type="text" name="txtid_estado"><br>
+            numero casa :<input type="text" name="txtend_numero"><br>
+            <!--tabela estado -->
+            nome estado:<input type="text" name="txtest_nome"><br>
+            id_cidade:<input type="text" name="txtid_cidade"><br>
+            <!--table cidade -->
+            id_bairro:<input type="text" name="txtid_bairro" ><br>
+            cid_nome:<input type="text" name="txtcid_nome"><br>
+            id_cep:<input type="text" name="txtid_cep"><br>
+            cep_numero:<input type="text" name="txtcep_numero"><br>
+            bairro:<input type="text" name="txtbai_nome"><br>
+            id_endereco:<input type="text" name="txtid_endereco"><br>
+            nome rua:<input type="text" name="txtrua_nome"><br>
+             id rua:<input type="text" name="txtid_rua"><br>
+            <input type="submit" value="enviar">
+        </form>
       
     </body>
 </html>
