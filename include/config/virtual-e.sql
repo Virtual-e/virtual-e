@@ -77,16 +77,16 @@ CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_endereco` (
   `id_endereco` INT NOT NULL AUTO_INCREMENT,
   `end_rua` VARCHAR(255) NOT NULL,
   `end_numero` VARCHAR(60) NOT NULL,
-  `id_aluno` INT NOT NULL,
+  `id_pessoa` INT NOT NULL,
   `end_cep` VARCHAR(45) NOT NULL,
   `id_cidade` INT NOT NULL,
   `id_bairro` INT NULL,
   PRIMARY KEY (`id_endereco`),
-  INDEX `fk_tb_endereco_aluno_idx` (`id_aluno` ASC),
+  INDEX `fk_tb_endereco_aluno_idx` (`id_pessoa` ASC),
   INDEX `fk_tb_endereco_cidade_idx` (`id_cidade` ASC),
   INDEX `fk_tb_endereco_bairro_idx` (`id_bairro` ASC),
   CONSTRAINT `fk_tb_endereco_aluno`
-    FOREIGN KEY (`id_aluno`)
+    FOREIGN KEY (`id_pessoa`)
     REFERENCES `virtual-e`.`tb_aluno` (`id_aluno`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
