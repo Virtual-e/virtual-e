@@ -71,6 +71,30 @@ COLLATE = utf8_general_ci;
 
 
 -- -----------------------------------------------------
+-- Table `virtual-e`.`tb_professor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_professor` (
+  `id_professor` INT NOT NULL AUTO_INCREMENT,
+  `pro_nome` VARCHAR(100) NOT NULL,
+  `pro_datanasci` DATE NOT NULL,
+  `pro_datacad` DATE NOT NULL,
+  `pro_mae` VARCHAR(100) NOT NULL,
+  `pro_pai` VARCHAR(100) NOT NULL,
+  `pro_cpf` VARCHAR(60) NOT NULL,
+  `pro_rg` VARCHAR(60) NOT NULL,
+  `pro_email` VARCHAR(100) NULL,
+  `pro_email1` VARCHAR(100) NULL,
+  `pro_telefone` VARCHAR(60) NOT NULL,
+  `pro_telefone1` VARCHAR(45) NULL,
+  `pro_formacao` VARCHAR(255) NOT NULL,
+  `pro_descricao` TEXT NULL,
+  PRIMARY KEY (`id_professor`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8
+COLLATE = utf8_general_ci;
+
+
+-- -----------------------------------------------------
 -- Table `virtual-e`.`tb_endereco`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_endereco` (
@@ -98,6 +122,11 @@ CREATE TABLE IF NOT EXISTS `virtual-e`.`tb_endereco` (
   CONSTRAINT `fk_tb_endereco_bairro`
     FOREIGN KEY (`id_bairro`)
     REFERENCES `virtual-e`.`tb_bairro` (`id_bairro`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_tb_endereco_professor`
+    FOREIGN KEY (`id_pessoa`)
+    REFERENCES `virtual-e`.`tb_professor` (`id_professor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
