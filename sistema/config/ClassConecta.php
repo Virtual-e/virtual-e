@@ -24,7 +24,7 @@ class Config
 {
   private $usuario="root";
   private  $senha="root";
-  private $banco="virtual-e1";
+  private $banco="virtual-e";
   private $caminho="localhost";
  
   public function  Conecta()
