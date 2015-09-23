@@ -1,0 +1,46 @@
+/*
+    Folha de estilo criado para o formulario de cadastro de alunos
+    e também tentar mantelo como padão
+*/
+/* 
+    Criado on : 23/09/2015, 00:22:06
+    Programador     : wesley
+*/
+
+*{
+  margin: 0px;
+  padding: 0px; 
+      
+}
+#cadastros
+{
+    width: 500px;
+    margin: 0 auto;
+    margin-top:10px;
+    padding-bottom: 5px;
+}
+ul#nav-aba
+{
+    list-style: none;
+    
+}
+ul#nav-aba li 
+{
+    display: inline;
+}
+ul#nav-aba li a 
+{
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #036;
+    color:#333;
+}
+#deletar{background: #ccc;}
+#editar{background:white; }
+#listar{background: silver;}
+#novo { background:#333; }
+
+.aba
+{
+    display: none;
+}

@@ -22,14 +22,14 @@ class ClassEndereco {
     private $end_rua;
     private $end_numero;
     private $end_cep;
-    private $id_cidade; //fk referencia a chave da tb_cidade
-    private $id_bairro; //fk referencia a chava da tb_bairro
+    private $id_cidade; //fk referencia a chave da tb_cidade !!!!tem que ter um metodo para preencher um combobox
+    private $id_bairro; //fk referencia a chava da tb_bairro! !!!tem que ter um metodo para preencher um combobox
 
     /* --tb_bairro-- */
     private $bai_nome;
     /* --tb_cidade-- */
     private $cid_nome;
-    private $id_estado; //fk referencia a chave da tb_estado
+    private $id_estado; //fk referencia a chave da tb_estado !!!!tem que ter um metodo para preencher um combobox
     /* --tb_estado-- */
     private $est_nome;
 
@@ -139,6 +139,30 @@ class ClassEndereco {
         }
         $sql = "insert into tb_endereco values (null,'$this->end_rua','$this->end_numero','$this->end_cep','$idcidade','$idbairro')";
         $query = mysql_query($sql) or die("<script>alert('Erro 0007 erro ao salvar endereco!');</script>");
+    }
+
+    function PreencheCombCidade($cep) {
+        $sql = "select * from tb_endereco e inner join tb_cidade c on (e.id_cidade=c.id_cidade) where end_cep='$cep' group by cid_nome";
+        $query = mysql_query($sql);
+
+        while ($linha = mysql_fetch_array($query)) {
+            $idcidade = $linha['id_cidade'];
+
+            $nomeCidade = $linha['cid_nome'];
+            echo "<option value=$nomeCidade></option><br>";
+        }
+    }
+
+    function PreencheComboBairro($cep) {
+        $sql = "select * from  tb_endereco e inner join tb_bairro b on (e.id_bairro=b.id_bairro) where  end_cep='$cep' group by  bai_nome";
+        $query = mysql_query($sql);
+
+        while ($linha = mysql_fetch_array($query)) {
+            $idbairro = $linha['id_bairro'];
+
+            $nomebairro = $linha['bai_nome'];
+            echo "<option value=$idbairro >$nomebairro</option><br>";
+        }
     }
 
 }
