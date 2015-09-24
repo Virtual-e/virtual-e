@@ -37,10 +37,36 @@ ul#nav-aba li a
 }
 #deletar{background: #ccc;}
 #editar{background:white; }
-#listar{background: silver;}
+#listar{background: white;}
 #novo { background:#333; }
 
 .aba
 {
     display: none;
+    padding-top: 20px;
+}
+table tbody tr:nth-child(even) {
+background:lightgray;
+cursor: pointer;
+}
+table tbody tr:nth-child(even):hover {
+background: white ;
+cursor: pointer;
+color: black;
+}
+table
+{   
+    border: solid 1px activecaption;
+    
+    cursor: pointer;
+}
+td
+{
+    text-align: center;
+}
+#barra-cima
+{
+    height: 50px;
+    width: 100%;
+    color: white;
 }

@@ -19,22 +19,22 @@
         </script>
     </head>
     <body>
+        <img id="barra-cima" src="../../include/imagens/barracima.png"/>
         <div id="cadastros">
             <ul id="nav-aba">
                 <li><a href="#novo">NOVO</a></li>
-                <li><a href="#editar">EDITAR</a></li>
-                <li><a href="#deletar">DELETAR</a></li>
+                
             </ul>
             <div id="listar" class="aba">
                 <!--aqui vai ser listado os alunos cadastrados -->
-                Lista de endereços cadastrados
+                Alunos Cadastrados no Sistema
                 <?php
                 include './_viewAluno.php';
                 
                 $viewAluno = new _viewAluno();
                 ?>
-                <table id="tabela" border="1">
-                    <tr><td>ALUNO</td><td>NASCIMENTO</td><td>CPF</td><td>CEP</td><td>UF</td><td>CIDADE</td><td>BAIRRO</td><td>RUA</td><td>NUMERO</td></tr>
+                <table id="tabela">
+                    <tr><td>ALUNO</td><td>NASCIMENTO</td><td>CPF</td><td>CEP</td><td>UF</td><td>CIDADE</td><td>BAIRRO</td><td>RUA</td><td>NUMERO</td><td>VISUALIZAR</td><td>DELETAR</td><td>EDITAR</td></tr>
                   
                  <?php   $viewAluno->listarEndereco(); ?>
               

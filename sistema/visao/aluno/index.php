@@ -18,5 +18,6 @@
         <?php
             include './frmAluno.php';
         ?>
+        
     </body>
 </html>

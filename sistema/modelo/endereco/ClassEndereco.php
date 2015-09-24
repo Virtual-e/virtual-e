@@ -186,7 +186,9 @@ class ClassEndereco {
                 echo"<td>".$bai_nome."</td>";  
                 echo"<td>".$end_rua."</td>";
                 echo"<td>".$end_numero."</td>";
-                
+                echo"<td><a href='#'><img id=#lupa src=../../include/imagens/visualizar.png height=30 width=30 title=Visualizar></a> "; 
+                echo"<td><a href='#'><img id=#lupa src=../../include/imagens/deletar.png height=30 width=30 title=Deletar></a> ";
+                echo"<td><a href='#'><img id=#lupa src=../../include/imagens/editar.png height=30 width=30 title=editar></a> ";
             }
             echo "</tr>";
         }
