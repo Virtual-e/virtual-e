@@ -164,5 +164,33 @@ class ClassEndereco {
             echo "<option value=$idbairro >$nomebairro</option><br>";
         }
     }
+        function ListarEndereco() {
+            $sql = "select * from  tb_endereco e inner join tb_bairro b on (e.id_bairro=b.id_bairro) inner join tb_cidade c on (e.id_cidade=c.id_cidade) inner join tb_estado uf on (c.id_estado=uf.id_estado) inner join tb_aluno a on (e.id_endereco=a.id_endereco)";
+            $query = mysql_query($sql);
+            while ($linha = mysql_fetch_array($query)) {
+                $end_rua = $linha['end_rua'];
+                $end_numero=$linha['end_numero'];
+                $end_cep = $linha['end_cep'];
+                $bai_nome=$linha['bai_nome'];
+                $cid_nome=$linha['cid_nome'];
+                $est_nome=$linha['est_nome'];
+                $alu_nome = $linha['alu_nome'];
+                $alu_cpf=$linha['alu_cpf'];
+                $alu_datanasci = $linha['alu_datanasci'];
+                 echo"<tr><td>".$alu_nome."</td>";
+                 echo"<td>".$alu_datanasci."</td>";
+                 echo"<td>".$alu_cpf."</td>"; 
+                echo"<td>".$end_cep."</td>";
+                echo"<td>".$est_nome."</td>";
+                echo"<td>".$cid_nome."</td>";
+                echo"<td>".$bai_nome."</td>";  
+                echo"<td>".$end_rua."</td>";
+                echo"<td>".$end_numero."</td>";
+                
+            }
+            echo "</tr>";
+        }
+
+    
 
 }
