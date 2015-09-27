@@ -10349,3 +10349,36 @@ if ( typeof noGlobal === strundefined ) {
 return jQuery;
 
 }));
+
+//funções do sistema parte do aluno
+  $(function(){
+    $('input[type=submit]').click(function(){
+ 
+    $.ajax({
+            type      : 'post',
+ 
+            url       : '../../controle/aluno/ControleAluno.php',
+ 
+            data      : 'nome='+ $('#campo1').val() +'&sobrenome='+ $('#campo2').val(),
+ 
+            dataType  : 'html',
+ 
+            success : function(txt){
+                    $('#listar').html("buceta gostosa");
+                }
+        });
+ 
+        });
+    });
+    
+      $(function load()
+            {
+                $(".aba:first").show();
+                $("#nav-aba a").click(function ()
+                {
+                    $(".aba").hide();
+                    var div = $(this).attr("href");
+                    $(div).show();
+                    return false;
+                });
+            });
