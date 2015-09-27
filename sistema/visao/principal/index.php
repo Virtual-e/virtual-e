@@ -2,7 +2,7 @@
 <!--
    Autor:Wesley da Silva Pereira 
    data: 23/09/2015
-   view da classe referente ao aluno
+   view da classe principal
 -->
 <?php include '../../config/ClassConecta.php';
       $conn = new Config();
@@ -12,7 +12,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>.::Virtual-e::.</title>
+        <title>.::VIRTUAL-E::.</title>
          <link href="../../include/css/estilo.css" rel="stylesheet" type="text/css"/>
         <script  type="text/javascript"  src="../../include/js/jquery-1.11.3.js"></script>
         <link href="../../include/css/menu-lateral.css"  rel="stylesheet"  type="text/css" />
