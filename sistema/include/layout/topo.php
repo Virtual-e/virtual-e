@@ -14,9 +14,17 @@ data:26/09/2015
     </head>
     <body>
         <div id="logo-cabeçalho"> Virtual-e<br>Sistema de Gestão Escolar   versão 1.0</div>
-        <div id="foto-user"><img src="../../include/imagens/usuarios/semfoto.jpg"  height="80" width="100"><!--aqui entra php -->
+        
+        <div id="user-details">
+             &nbsp Nome:Wesley da silva <!--aqui entra php -->
+             <br>  &nbsp Cargo:Administrador
+              <div id="user-logoff">SAIR</div>
         </div>
-        <br>
-         &nbsp Nome:Wesley da silva <!--aqui entra php -->
+        
+        <div id="foto-user"><img src="../../include/imagens/usuarios/semfoto.jpg" style="border-radius: 10px;" height="80" width="75" align="bottom"/><!--aqui entra php -->
+       
+        </div>
+      
+        
     </body>
 </html>
