@@ -5,7 +5,7 @@
         <script  type="text/javascript"  src="../../include/js/jquery-1.11.3.js"></script>
  
     </head>
-    <body onload="load()">
+    <body onload="">
       
     </body>
 </html>

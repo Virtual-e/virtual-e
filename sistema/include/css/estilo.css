@@ -91,8 +91,8 @@ td
     color: white;
     background-color: #4b67a1;
     font-family: arial, helvetica, serif;
-    
-    bottom:0;
+    position: absolute;
+    bottom: 0px;
     width:100%;
 
 

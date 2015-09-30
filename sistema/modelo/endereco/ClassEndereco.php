@@ -164,35 +164,66 @@ class ClassEndereco {
             echo "<option value=$idbairro >$nomebairro</option><br>";
         }
     }
-        function ListarEndereco() {
-            $sql = "select * from  tb_endereco e inner join tb_bairro b on (e.id_bairro=b.id_bairro) inner join tb_cidade c on (e.id_cidade=c.id_cidade) inner join tb_estado uf on (c.id_estado=uf.id_estado) inner join tb_aluno a on (e.id_endereco=a.id_endereco)";
-            $query = mysql_query($sql);
-            while ($linha = mysql_fetch_array($query)) {
-                $end_rua = $linha['end_rua'];
-                $end_numero=$linha['end_numero'];
-                $end_cep = $linha['end_cep'];
-                $bai_nome=$linha['bai_nome'];
-                $cid_nome=$linha['cid_nome'];
-                $est_nome=$linha['est_nome'];
-                $alu_nome = $linha['alu_nome'];
-                $alu_cpf=$linha['alu_cpf'];
-                $alu_datanasci = $linha['alu_datanasci'];
-                 echo"<tr><td>".$alu_nome."</td>";
-                 echo"<td>".$alu_datanasci."</td>";
-                 echo"<td>".$alu_cpf."</td>"; 
-                echo"<td>".$end_cep."</td>";
-                echo"<td>".$est_nome."</td>";
-                echo"<td>".$cid_nome."</td>";
-                echo"<td>".$bai_nome."</td>";  
-                echo"<td>".$end_rua."</td>";
-                echo"<td>".$end_numero."</td>";
-                echo"<td><a href='#'><img id=#lupa src=../../include/imagens/visualizar.png height=30 width=30 title=Visualizar></a> "; 
-                echo"<td><a href='#'><img id=#lupa src=../../include/imagens/deletar.png height=30 width=30 title=Deletar></a> ";
-                echo"<td><a href='#'><img id=#lupa src=../../include/imagens/editar.png height=30 width=30 title=editar></a> ";
-            }
-            echo "</tr>";
-        }
 
-    
+    function ListarEndereco($pagina) {
+
+       /*
+        * Criar aqui a parte de páginação do sistema 
+        * explicando passo a passo
+        */
+         $lpp=1;// quero dois resultados por páginas
+         
+       
+        echo "<table><br>";
+        echo"<tr><td>Nome</td><td>Nascimento</td><td>CPF</td><td>CEP</td><td>UF</td><td>CIDADE</td><td>Bairro</td><td>RUA</td><td>NUMERO</td><td>VER</td><td>EXCLUIR</td><td>EDITAR</td></tr>";
+        $sql = "select * from  tb_endereco e inner join tb_bairro b on (e.id_bairro=b.id_bairro) inner join tb_cidade c on (e.id_cidade=c.id_cidade) inner join tb_estado uf on (c.id_estado=uf.id_estado) inner join tb_aluno a on (e.id_endereco=a.id_endereco)";
+        
+        $query = mysql_query($sql);//aqui executa a query de pesquisa com os inner join
+        
+        $total=  mysql_num_rows($query);// aqui pego o total de paginas para fazer a paginação
+        $paginas=  ceil($total/$lpp);//retorna o total de paginas
+        
+        if(!isset($pagina)){$pagina=0;}//caso pagina não tiver sido setada vai receber 0
+        
+        $inicio=$pagina*$lpp;//pega o inicio da paginação
+        $sql = "select * from  tb_endereco e inner join tb_bairro b on (e.id_bairro=b.id_bairro) inner join tb_cidade c on (e.id_cidade=c.id_cidade) inner join tb_estado uf on (c.id_estado=uf.id_estado) inner join tb_aluno a on (e.id_endereco=a.id_endereco) limit $inicio,$lpp ";
+       $query = mysql_query($sql);//aqui executa a query de pesquisa com os inner join
+        while ($linha = mysql_fetch_array($query)) {
+            $end_rua = $linha['end_rua'];
+            $end_numero = $linha['end_numero'];
+            $end_cep = $linha['end_cep'];
+            $bai_nome = $linha['bai_nome'];
+            $cid_nome = $linha['cid_nome'];
+            $est_nome = $linha['est_nome'];
+            $alu_nome = $linha['alu_nome'];
+            $alu_cpf = $linha['alu_cpf'];
+            $alu_datanasci = $linha['alu_datanasci'];
+            echo"<tr><td>" . $alu_nome . "</td>";
+            echo"<td>" . $alu_datanasci . "</td>";
+            echo"<td>" . $alu_cpf . "</td>";
+            echo"<td>" . $end_cep . "</td>";
+            echo"<td>" . $est_nome . "</td>";
+            echo"<td>" . $cid_nome . "</td>";
+            echo"<td>" . $bai_nome . "</td>";
+            echo"<td>" . $end_rua . "</td>";
+            echo"<td>" . $end_numero . "</td>";
+            echo"<td><a href='#'><img id=#lupa src=../../include/imagens/visualizar.png height=30 width=30 title=Visualizar></a> ";
+            echo"<td><a href='#'><img id=#lupa src=../../include/imagens/deletar.png height=30 width=30 title=Deletar></a> ";
+            echo"<td><a href='#'><img id=#lupa src=../../include/imagens/editar.png height=30 width=30 title=editar></a> ";
+        }
+        echo "</tr>";
+        echo"</table>";
+        if($pagina>0)
+            {
+              $menos=$pagina -1;
+              $url="index.php?pagina=$menos";
+              echo "<a href=$url>Anterior</a>";
+            }
+          for($i=0;$i< $paginas; $i++)
+               {
+                 $url="index.php?pagina=$i";
+                 echo "|<input type=submit value=$i id=pagina name=pagina onclick=ListarAlunos($i)  >";
+               }  
+    }
 
 }

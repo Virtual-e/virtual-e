@@ -15,7 +15,7 @@ and open the template in the editor.
          
       
         <ul>
-            <li>ALUNOS</li>
+            <li onclick="ChamarAlunoView()" >ALUNOS</li>
             <li>PROFESSORES</li>
         </ul>
          </div>    
