@@ -14,10 +14,18 @@ include '../../modelo/endereco/ClassEndereco.php';
 $endereco=new ClassEndereco();
 $acao=$_POST['acao'];
 $pagina=$_POST['pagina'];
+$cep=$_POST['cep'];
+$cidade=$_POST['cidade'];
 sleep(2);
 switch ($acao)
 {
 case "listar": $endereco->ListarEndereco($pagina);
+    break;
+case "CbxCidade": $endereco->PreencheCombCidade($cep);
+    break;
+case "CbxBairro":$endereco->PreencheComboBairro($cep);
+    break;
+case "CbxEstado":$endereco->PreencheComboEstado($cidade);
     break;
 default : echo "erro";
 }

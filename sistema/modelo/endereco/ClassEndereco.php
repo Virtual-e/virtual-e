@@ -147,12 +147,33 @@ class ClassEndereco {
 
         while ($linha = mysql_fetch_array($query)) {
             $idcidade = $linha['id_cidade'];
-
+           
             $nomeCidade = $linha['cid_nome'];
-            echo "<option value=$nomeCidade></option><br>";
+            echo "<option value=$idcidade selected=true>$nomeCidade</option>";
         }
     }
 
+    /*
+     * Adicinado nova função preenche estado com combobox passando a cidade como paremetro
+     * data:01/10/2015
+     */
+    
+    function PreencheComboEstado($cidade) {
+        $sql = "select * from  tb_cidade c inner join tb_estado e on (e.id_estado=c.id_estado) where  id_cidade='$cidade' group by  est_nome";
+        $query = mysql_query($sql);
+
+        while ($linha = mysql_fetch_array($query)) {
+            $idestado = $linha['id_estado'];
+
+            $nomeestado = $linha['est_nome'];
+            echo "<option value=$idestado >$nomeestado</option>";
+        }
+    }
+    
+    
+    
+    
+    
     function PreencheComboBairro($cep) {
         $sql = "select * from  tb_endereco e inner join tb_bairro b on (e.id_bairro=b.id_bairro) where  end_cep='$cep' group by  bai_nome";
         $query = mysql_query($sql);
@@ -161,33 +182,35 @@ class ClassEndereco {
             $idbairro = $linha['id_bairro'];
 
             $nomebairro = $linha['bai_nome'];
-            echo "<option value=$idbairro >$nomebairro</option><br>";
+            echo "<option value=$idbairro >$nomebairro</option>";
         }
     }
 
     function ListarEndereco($pagina) {
 
-       /*
-        * Criar aqui a parte de páginação do sistema 
-        * explicando passo a passo
-        */
-         $lpp=1;// quero dois resultados por páginas
-         
-       
+        /*
+         * Criar aqui a parte de páginação do sistema 
+         * explicando passo a passo
+         */
+        $lpp = 2; // quero dois resultados por páginas
+
+        echo "<br><ul><li onclick= ChamarFormularioAluno() >NOVO</li></ul>";
         echo "<table><br>";
         echo"<tr><td>Nome</td><td>Nascimento</td><td>CPF</td><td>CEP</td><td>UF</td><td>CIDADE</td><td>Bairro</td><td>RUA</td><td>NUMERO</td><td>VER</td><td>EXCLUIR</td><td>EDITAR</td></tr>";
         $sql = "select * from  tb_endereco e inner join tb_bairro b on (e.id_bairro=b.id_bairro) inner join tb_cidade c on (e.id_cidade=c.id_cidade) inner join tb_estado uf on (c.id_estado=uf.id_estado) inner join tb_aluno a on (e.id_endereco=a.id_endereco)";
-        
-        $query = mysql_query($sql);//aqui executa a query de pesquisa com os inner join
-        
-        $total=  mysql_num_rows($query);// aqui pego o total de paginas para fazer a paginação
-        $paginas=  ceil($total/$lpp);//retorna o total de paginas
-        
-        if(!isset($pagina)){$pagina=0;}//caso pagina não tiver sido setada vai receber 0
-        
-        $inicio=$pagina*$lpp;//pega o inicio da paginação
+
+        $query = mysql_query($sql); //aqui executa a query de pesquisa com os inner join
+
+        $total = mysql_num_rows($query); // aqui pego o total de paginas para fazer a paginação
+        $paginas = ceil($total / $lpp); //retorna o total de paginas
+
+        if (!isset($pagina)) {
+            $pagina = 0;
+        }//caso pagina não tiver sido setada vai receber 0
+
+        $inicio = $pagina * $lpp; //pega o inicio da paginação
         $sql = "select * from  tb_endereco e inner join tb_bairro b on (e.id_bairro=b.id_bairro) inner join tb_cidade c on (e.id_cidade=c.id_cidade) inner join tb_estado uf on (c.id_estado=uf.id_estado) inner join tb_aluno a on (e.id_endereco=a.id_endereco) limit $inicio,$lpp ";
-       $query = mysql_query($sql);//aqui executa a query de pesquisa com os inner join
+        $query = mysql_query($sql); //aqui executa a query de pesquisa com os inner join
         while ($linha = mysql_fetch_array($query)) {
             $end_rua = $linha['end_rua'];
             $end_numero = $linha['end_numero'];
@@ -213,17 +236,15 @@ class ClassEndereco {
         }
         echo "</tr>";
         echo"</table>";
-        if($pagina>0)
-            {
-              $menos=$pagina -1;
-              $url="index.php?pagina=$menos";
-              echo "<a href=$url>Anterior</a>";
-            }
-          for($i=0;$i< $paginas; $i++)
-               {
-                 $url="index.php?pagina=$i";
-                 echo "|<input type=submit value=$i id=pagina name=pagina onclick=ListarAlunos($i)  >";
-               }  
+        if ($pagina > 0) {
+            $menos = $pagina - 1;
+
+            echo "|<input type=submit value=Anterior id=pagina name=pagina onclick=ListarAlunos($menos)  >";
+        }
+        for ($i = 0; $i < $paginas; $i++) {
+
+            echo "|<input type=submit value=$i id=pagina name=pagina onclick=ListarAlunos($i)  >";
+        }
     }
 
 }
